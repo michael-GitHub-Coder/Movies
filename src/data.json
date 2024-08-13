@@ -1,4 +1,5 @@
-[
+{
+    "Movies" : [
     {
         "id": "1",
         "name": "Movie 1 name",
@@ -178,35 +179,35 @@
         "id": "26",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
-        "type":"Serie",
+        "type":"Series",
         "image": "images/ww.png"
     },
     {
         "id": "27",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
-        "type":"Serie",
+        "type":"Series",
         "image": "images/ww.png"
     },
     {
         "id": "28",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
-        "type":"Serie",
+        "type":"Series",
         "image": "images/ww.png"
     },
     {
         "id": "29",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
-        "type":"Serie",
+        "type":"Series",
         "image": "images/ww.png"
     },
     {
         "id": "30",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
-        "type":"Serie",
+        "type":"Series",
         "image": "images/ww.png"
     }
-] 
+]} 
