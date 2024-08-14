@@ -32,7 +32,7 @@ const ViewMovies = () => {
         {movie.map( data => (
             data.id == id ? 
             <>
-            <div className=" max-w-xs rounded overflow-hidden shadow-lg"><img src={'../public/' + (data.image)} className='h-full w-40'/></div>
+            <div className=" max-w-xs rounded overflow-hidden shadow-lg"><img src={'../public/' + (data.image)} className='h-full w-full'/></div>
                 <div className="w-5/6 px-6 rounded overflow-hidden ">
                 <div className=" font-bold text-xl">{data.name}</div>
                 <p className="py-10 ">{data.description}</p>
