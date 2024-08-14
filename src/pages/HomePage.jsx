@@ -1,13 +1,14 @@
 import React from 'react'
 import Movies from '../Components/Movies'
 import Series from '../Components/Series'
-
+import NavBar from '../Components/NavBar'
 
 const HomePage = () => {
   return (
     <>
-       <Movies />
-       <Series />
+      <NavBar/>
+      <Movies />
+      <Series />
     </>
   )
 }

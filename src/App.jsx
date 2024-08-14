@@ -16,9 +16,9 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<MainLayout />} >
       <Route index element={<HomePage />} />
-      <Route path='/movies' element={<MoviesPage title="LATEST MOVIES"/>} />
+      <Route path='/movies' element={<MoviesPage/>} />
       <Route path='/series' element={<SeriesPage />} />
-      <Route path='/AddMS' element={<AddMovies_Series/>} />
+      <Route path='/AddMS/:id' element={<AddMovies_Series/>} />
       <Route path='/ViewMovies/:id' element={<ViewMovies/>} /> 
       <Route path='/ViewSeries/:id' element={<ViewSeries/>} />
     </Route>

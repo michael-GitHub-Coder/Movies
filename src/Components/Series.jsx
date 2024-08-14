@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import NavBar from "./NavBar";
 
 
 const Series = () => {
@@ -28,20 +29,23 @@ const Series = () => {
 
     const seriesdata =  series && series.map(data =>{
         return (
-          <Link key={data.id} onClick={(e) => {e.preventDefault(); viewSeries(data.id)}} ><img src={data.image}  className="w-44 h-68"/></Link>
+          <Link key={data.id} onClick={(e) => {e.preventDefault(); viewSeries(data.id)}} ><img src={data.image}  className="w-44 h-64 max-w-xs overflow-hidden shadow-lg"/></Link>
       )
     })
   
     // const NewSeriesdata = constNewJsonData.filter(constNewJsonData => constNewJsonData !== "");
 
     return (
-        <div>
+       <>
+    
+       <div>
           <h1 className="my-24 flex justify-center">LATEST SERIES</h1>
           <div className="flex grid grid-cols-4 gap-2 justify-center flex-wrap gap-4 mx-80">
             {seriesdata.slice(0,8)}
           </div>
           <Link to="/series"><button className="bg-indigo-400 text-white rounded-full px-6 py-2 ml-[64rem] mt-10">More</button></Link>
         </div>
+       </>
     )
 }
 

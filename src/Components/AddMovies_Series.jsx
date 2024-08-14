@@ -3,10 +3,12 @@ import { useState,useEffect } from "react"
 import DatePicker from 'react-datepicker';
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import testP from '../Images/1c.png'
+import NavBar from "./NavBar";
 
 const AddMovies_Series = () => {
    
+    const {id} = useParams();
+    
     const [movies, setMovie] = useState(null);
     const [startDate, setStartDate] = useState(new Date());
 
@@ -31,6 +33,7 @@ const AddMovies_Series = () => {
 
     return (
         <div>
+        <NavBar />
         <form className="flex grid grid-cols-2 jstify-center justify-items-center mx-48 my-24">
             <div className=" w-1/2 h-5/6  overflow-hidden shadow-lg bg-gray-300">
                 <div className="flex justify-center font-bold text-md mt-52"><button>Upload Movie Poster</button></div>

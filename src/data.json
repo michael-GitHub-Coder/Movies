@@ -3,7 +3,7 @@
     {
         "id": "1",
         "name": "Movie 1 name",
-        "description":"Movie 1 description",
+        "description":" Movie 1 description Movie 1 description Movie 1 description Movie 1 description Movie 1 description Movie 1 description  Movie 1 description Movie 1 description Movie 1 description Movie 1 description Movie 1  Movie 1 description Movie 1 description Movie 1 description Movie 1 description Movie 1 description Movie 1 description  ",
         "type":"Movie",
         "image": "images/1c.png",
         "year":"2024",

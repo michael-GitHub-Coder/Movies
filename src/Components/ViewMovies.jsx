@@ -1,9 +1,8 @@
 import React from 'react'
 import { useState,useEffect } from "react"
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import testP from '../Images/1c.png'
+import NavBar from './NavBar';
 
 const ViewMovies = () => {
 
@@ -27,13 +26,14 @@ const ViewMovies = () => {
 
   
   return (
-
+   <>
+    <NavBar/>
     <div className="flex grid grid-cols-2 jstify-center justify-items-center mx-48 my-24">
         {movie.map( data => (
             data.id == id ? 
             <>
-            <div className=" max-w-xs rounded overflow-hidden shadow-lg"><img src={'../public/' + (data.image)} className='h-full w-full'/></div>
-                <div className="w-5/6 px-6 rounded overflow-hidden ">
+            <div className="max-w-xs rounded overflow-hidden shadow-xl"><img src={'../public/' + (data.image)} className='h-full w-full'/></div>
+            <div className="w-5/6 px-6 rounded overflow-hidden ">
                 <div className=" font-bold text-xl">{data.name}</div>
                 <p className="py-10 ">{data.description}</p>
                 <div className="font-bold text-md">
@@ -43,8 +43,8 @@ const ViewMovies = () => {
                     <div>Type : {data.type}</div>
                 </div>
                 <div className="mt-8 py-2">
-                    <button className="text-white mr-12 pl-4 pr-4 p-2 bg-indigo-500 rounded-full">EDIT</button>
-                    <button button className="text-white mr-12 pl-4 pr-4 p-2 bg-indigo-500 rounded-full">DELETE</button>
+                    <Link to={`/AddMS/${data.id}`}><button className="text-white mr-12 pl-4 pr-4 p-2 bg-indigo-500 rounded-full">EDIT</button></Link>
+                    <Link to="/AddMS"><button button className="text-white mr-12 pl-4 pr-4 p-2 bg-indigo-500 rounded-full">DELETE</button></Link>
                 </div>
             </div>
             </>
@@ -52,6 +52,7 @@ const ViewMovies = () => {
          ))}
         
     </div>
+   </>
   )
   
 }

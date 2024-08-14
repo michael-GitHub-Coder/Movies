@@ -4,7 +4,6 @@ import NavBar from '../Components/NavBar'
 import Footer from '../Components/Footer'
 const MainLayout = () => {
   return <>
-    <NavBar/>
     <Outlet/>
     <Footer />
   </>

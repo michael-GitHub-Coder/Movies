@@ -40,7 +40,7 @@ const NavBar = ({title}) => {
                     </button>
                 </div>  
             </div>  
-            <div className="flex justify-center py-32">{title}</div>
+            <div className="flex justify-center text-5xl text-white py-32">{title}</div>
         </nav>
        </>
     )
