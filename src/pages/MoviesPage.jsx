@@ -2,9 +2,18 @@ import React from 'react'
 import data from "../data.json";
 import { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const MoviesPage = () => {
+
+    
+    const navigate = useNavigate();
+
+    const viewMovies = (id) => {
+        navigate(`/viewMovies/${id}`);
+    }
+
     const [movies, setMovies] = useState([]); 
     //  const [loading, setLoading] = useState(true);
     
@@ -27,7 +36,8 @@ const MoviesPage = () => {
             {
                     movies && movies.map(data => {
                         return (
-                        data.type == "Movie" ? <img src={data.image} key={data.id} className="w-44 h-68" /> : ""
+                        // data.type == "Movie" ? <img src={data.image} key={data.id} className="w-44 h-68" /> : ""
+                        <Link key={data.id} onClick={(e) => {e.preventDefault(); viewMovies(data.id)}} ><img src={data.image}  className="w-44 h-68"/></Link>
                         )
                     })
                 }

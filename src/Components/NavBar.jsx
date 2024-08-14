@@ -35,7 +35,7 @@ const NavBar = ({title}) => {
                 </div>
                 {/* <!-- Button --> */}
                 <div className="hidden md:flex">
-                    <button className="mt-9  bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-500">
+                    <button className="mt-9  bg-indigo-500 text-white px-4 py-2 rounded-full hover:bg-indigo-300">
                         Subscribe
                     </button>
                 </div>  

@@ -1,5 +1,6 @@
 
 import { useState,useEffect } from "react"
+import DatePicker from 'react-datepicker';
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import testP from '../Images/1c.png'
@@ -7,7 +8,11 @@ import testP from '../Images/1c.png'
 const AddMovies_Series = () => {
    
     const [movies, setMovie] = useState(null);
+    const [startDate, setStartDate] = useState(new Date());
 
+    const handleChange = (date) => {
+        setStartDate(date);
+     };
     useEffect(() =>{
         const fetchMovie = async () => {
             try{
@@ -33,7 +38,7 @@ const AddMovies_Series = () => {
             <div className="w-4/5 px-6 rounded overflow-hidden ">
                 <div className="text-md py-2">
                     <label htmlFor="name">Movie/Series Name</label>
-                    <div className="mt-4">
+                    <div className="mt-2">
                         <input
                         type="text"
                         id="name"
@@ -45,7 +50,7 @@ const AddMovies_Series = () => {
 
                 <div className="text-md py-2">
                     <label htmlFor="name">Description</label>
-                    <div className="mt-4">
+                    <div className="mt-2">
                         <input
                         type="text"
                         id="name"
@@ -57,28 +62,50 @@ const AddMovies_Series = () => {
 
                 <div className="text-md py-2">
                     <label htmlFor="name">Country</label>
-                    <div className="mt-4">
-                        <input
+                    <div className="mt-2">
+                        {/* <input
                         type="text"
                         id="name"
                         placeholder="Select Country"
                         className="border-2 border-gray-300 p-2 rounded w-full"
-                        />
+                        /> */}
+                        <select
+                        id="country"
+                        className="border-2 border-gray-300 p-2 rounded w-full"
+                        >
+                        <option value="">Select Country</option>
+                        <option value="usa">United States</option>
+                        <option value="canada">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="australia">Australia</option>
+                        <option value="france">France</option>
+                        <option value="germany">Germany</option>
+                        <option value="india">India</option>
+                        <option value="japan">Japan</option>
+                        <option value="china">China</option>
+                        </select>
+
                     </div>
                 </div>
 
                 <div className="text-md py-2">
                     <label htmlFor="name">Year</label>
-                    <div className="mt-4">
-                        <input
+                    <div className="mt-2">
+                        {/* <input
                         type="text"
                         id="name"
                         placeholder="2024/08/01"
                         className="border-2 border-gray-300 p-2 rounded w-full"
-                        />
+                        /> */}
+                         <DatePicker
+                            selected={startDate}
+                            onChange={handleChange}
+                            dateFormat="yyyy/MM/dd"
+                            className="border-2 border-gray-300 p-2 rounded w-full"
+                         />
                     </div>
                 </div>
-                <div className="mt-4 py-2"> 
+                <div className="mt-2 py-2"> 
                     <input
                     type="checkbox"
                     className="mr-2"
@@ -88,7 +115,7 @@ const AddMovies_Series = () => {
                         className="ml-14 mr-2 rounded-full text-indigo-500"
                     /> Series
                 </div>
-                <div className="mt-4 py-2"> 
+                <div className="mt-2 py-2"> 
                     <button className="text-white border-2 bg-indigo-500 p-2 rounded-full w-full">SAVE</button>
                 </div>
             </div>

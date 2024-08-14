@@ -1,12 +1,21 @@
 import React from 'react'
 import data from "../data.json";
 import { useState,useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const SeriesPage = () => {
+
+    const navigate = useNavigate();
+    
+    const viewSeries = (id) => {
+        navigate(`/viewSeries/${id}`);
+    }
+
     const [Series, setSeries] = useState([]); 
     //  const [loading, setLoading] = useState(true);
-    
+    const {id} = useParams();
+
      useEffect(() => {
         const fetchMovies = async () =>{
            try{
@@ -28,7 +37,8 @@ const SeriesPage = () => {
                 {
                     Series && Series.map(data => {
                         return (
-                        data.type == "Series" ? <img src={data.image} key={data.id} className="w-44 h-68" /> : " "
+                        // data.type == "Series" ? <img src={data.image} key={data.id} className="w-44 h-68" /> : " "
+                        <Link key={data.id} onClick={(e) => {e.preventDefault(); viewSeries(data.id)}} ><img src={data.image}  className="w-44 h-68"/></Link>
                         )
                     })
                 } 

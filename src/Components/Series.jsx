@@ -1,7 +1,15 @@
 import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+
 const Series = () => {
 
+  const navigate = useNavigate();
+
+    const viewSeries = (id) => {
+        navigate(`/viewSeries/${id}`);
+    }
   const [series, setSeries] = useState([]); 
   //  const [loading, setLoading] = useState(true);
   
@@ -20,7 +28,7 @@ const Series = () => {
 
     const seriesdata =  series && series.map(data =>{
         return (
-          data.type == "Series" ? <img src={data.image} key={data.id} className="w-44 h-68"/> : ""
+          <Link key={data.id} onClick={(e) => {e.preventDefault(); viewSeries(data.id)}} ><img src={data.image}  className="w-44 h-68"/></Link>
       )
     })
   

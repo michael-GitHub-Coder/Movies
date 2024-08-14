@@ -5,209 +5,300 @@
         "name": "Movie 1 name",
         "description":"Movie 1 description",
         "type":"Movie",
-        "image": "images/1c.png"
+        "image": "images/1c.png",
+        "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "2",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/3.png"
+        "image": "images/3.png",
+        "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "3",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/ad.png"
+        "image": "images/ad.png",
+        "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "4",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/avengers.jpg"
+        "image": "images/avengers.jpg",
+        "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "5",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/dd.png"
+        "image": "images/dd.png",
+        "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "6",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/j.png"
+        "image": "images/j.png",
+        "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "7",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/jw.png"
+        "image": "images/jw.png",
+        "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "8",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/m.png"
+        "image": "images/m.png",
+        "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "9",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/n.png"
+        "image": "images/n.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "10",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/parasite.png"
+        "image": "images/parasite.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "11",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/qs.png"
+        "image": "images/qs.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "12",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/rd.png"
+        "image": "images/rd.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "13",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/transit.png"
+        "image": "images/transit.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "14",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/us.png"
+        "image": "images/us.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "15",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/vb.png"
+        "image": "images/vb.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "16",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "17",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "18",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "19",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "20",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "21",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "22",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "23",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "24",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "25",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Movie",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "26",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "27",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "28",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "29",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
     },
     {
         "id": "30",
         "name": "Movie 2 name",
         "description":"Movie 2 description",
         "type":"Series",
-        "image": "images/ww.png"
+        "image": "images/ww.png",
+         "year":"2024",
+         "country":"South Africa",
+         "genre":"Action, "
+
     }
 ]} 
