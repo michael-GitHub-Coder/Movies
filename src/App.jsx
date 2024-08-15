@@ -7,7 +7,8 @@ import MoviesPage from './pages/MoviesPage'
 import SeriesPage from './pages/SeriesPage'
 import AddMovies_Series from './Components/AddMovies_Series'
 import ViewMovies from './Components/ViewMovies'
-import ViewSeries from './Components/ViewSeries'
+import ViewSeries, {load} from './Components/ViewSeries'
+import Edit from './Components/Edit'
 
 
 const App = () => {
@@ -18,9 +19,10 @@ const router = createBrowserRouter(
       <Route index element={<HomePage />} />
       <Route path='/movies' element={<MoviesPage/>} />
       <Route path='/series' element={<SeriesPage />} />
-      <Route path='/AddMS/:id' element={<AddMovies_Series/>} />
-      <Route path='/ViewMovies/:id' element={<ViewMovies/>} /> 
-      <Route path='/ViewSeries/:id' element={<ViewSeries/>} />
+      <Route path='/AddMS' element={<AddMovies_Series/>} />
+      <Route path='/ViewMovies/:id' element={<ViewMovies/>} loader={load} /> 
+      <Route path='/ViewSeries/:id' element={<ViewSeries/>} loader ={load} />
+      <Route path='./Edit' element={<Edit/>} loader={load}/>
     </Route>
   )
 )

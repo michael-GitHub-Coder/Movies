@@ -30,13 +30,14 @@ const MoviesPage = () => {
         }
         fetchMovies();
      }, [])
+     
     return(
         <>
         <NavBar title="LATEST MOVIES"/>
         <div className="flex justify-center flex-wrap gap-4 mx-80 my-1">  
-        <Link to={`/AddMS/${d}`}><button className="bg-indigo-400 text-white rounded-full px-6 py-2 ml-[60rem] mt-9 my-14">ADD</button></Link>
+        <Link to="/AddMS"><button className="bg-indigo-400 text-white rounded-full px-6 py-2 ml-[60rem] mt-9 my-14">ADD</button></Link>
            <div className="flex grid grid-cols-4 gap-6">
-            {
+            { 
                     movies && movies.map(data => {
                         return (
                         // data.type == "Movie" ? <img src={data.image} key={data.id} className="w-44 h-68" /> : ""

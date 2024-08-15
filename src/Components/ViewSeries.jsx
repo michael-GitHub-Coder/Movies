@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from "react"
-import { useParams} from "react-router-dom";
+import { useParams, useLoaderData} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import testP from '../Images/1c.png'
@@ -10,29 +10,31 @@ const ViewSeries = () => {
 
     const {id} = useParams();
 
-    const [seres, setSeries] = useState([]);
+    const loaded = useLoaderData();
 
-    useEffect(() =>{
-        const fetchMovie = async () => {
-            try{
-                const res = await fetch('http://localhost:5000/Movies?type=Series');
-                const data = await res.json();
-                setSeries(data);
+    // const [seres, setSeries] = useState([]);
 
-            }catch (error){
-                console.log("Error fetching data" + error);
-            }
-        }
+    // useEffect(() =>{
+    //     const fetchMovie = async () => {
+    //         try{
+    //             const res = await fetch('http://localhost:5000/Movies?type=Series');
+    //             const data = await res.json();
+    //             setSeries(data);
 
-        fetchMovie();
+    //         }catch (error){
+    //             console.log("Error fetching data" + error);
+    //         }
+    //     }
 
-    },[])
+    //     fetchMovie();
+
+    // },[])
 
   return (
     <>
     <NavBar/>
     <div className="flex grid grid-cols-2 jstify-center justify-items-center mx-48 my-24">
-        {seres.map( data => (
+        {loaded.map( data => (
             data.id == id ? 
             <>
             <div className=" max-w-xs rounded overflow-hidden shadow-lg"><img src={'../public/' + (data.image)} className='h-full w-ful'/></div>
@@ -60,4 +62,9 @@ const ViewSeries = () => {
   )
 }
 
-export default ViewSeries
+const load = async () => {
+    const res = await fetch('http://localhost:5000/Movies');
+    const data = await res.json();
+    return data;
+}
+export {ViewSeries as default, load} 
