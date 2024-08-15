@@ -1,44 +1,99 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import NavBar from "./NavBar";
-import { useLoaderData } from "react-router-dom";
+import {useParams, useLoaderData } from "react-router-dom";
 
 const Edit = () => {
 
 
   const Editdata = useLoaderData();
-  const [name, setName] = useState(Editdata.name);
-  const [description, setDescription] = useState(Editdata.description);
-  const [country, setCountry] = useState(Editdata.country);
-  const [type, setType] = useState(Editdata.type);
+  const {id} = useParams();
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [country, setCountry] = useState("");
+  const [type, setType] = useState("");
   const [startDate, setStartDate] = useState(new Date());
-  const [image, setImage] = useState(Editdata.image);
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/Movies?${id}`);
+        const data = await response.json();
+        
+        console.log(data.id)
+        alert(data.id)
+        // setName(data.name);
+        // setDescription(data.description);
+        // setCountry(data.country);
+        // setType(data.type);
+        // setStartDate(data.startDate);
+        // setImage(data.image);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+
+ 
+  }, []);
+
+  // {
+  //   Editdata.map(n => {
+  //     n.id === id ? console.log(n) : alert(Editdata.id + " " + id)
+  //     console.log(n.id)
+  //   })
+  // }
+ 
 
   const handleFileChange = (event) => {
     setImage(event.target.files[0]);
+    if(file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+         setUploadImage(reader.result);
+         setImage(reader.result);   
+      };
+
+      reader.readAsDataURL(file);
+      
+   }
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("description", description);
-    formData.append("country", country);
-    formData.append("type", type);
-    formData.append("year", startDate.toISOString().split("T")[0]);
-    // formData.append("image", image);
+    e.preventDefault();
+   
+    const newData = {
+      id: Math.floor(Math.random() * 1000000) + 1,
+      name,
+      description,
+      country,
+      startDate,
+      type,
+      image,
+   }
+
 
     try {
-      const response = await fetch("http://localhost:5000/Movies", {
-        method: "POST",
-        body: formData,
+      const response = await fetch(`http://localhost:5000/Movies/${id}`, {
+        method: "PUT",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newData),
       });
 
+    
+      
       if (response.ok) {
         alert("Movie/Series added successfully!");
-        // Optionally reset the form here
+        setName("");
+        setCountry("");
+        setDescription("");
+        setImage("");
       } else {
         alert("Failed to add Movie/Series.");
       }
@@ -48,16 +103,20 @@ const Edit = () => {
     }
   };
 
+
   return (
     <div>
       <NavBar />
+      {
+
+      }
       <form
         onSubmit={handleSubmit}
         className="flex grid grid-cols-2 justify-center justify-items-center mx-48 my-24"
       >
         <div className="w-1/2 h-5/6 overflow-hidden shadow-lg bg-gray-300">
           <div className="flex justify-center font-bold text-sm ml-24 mt-52">
-            {/* <input type="file" name="image" onChange={handleFileChange} /> */}
+            <input type="file" name="image" onChange={handleFileChange} />
           </div>
         </div>
         <div className="w-4/5 px-6 rounded overflow-hidden">
@@ -70,7 +129,7 @@ const Edit = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                placeholder="Movie/Series name"
+                placeholder={name}
                 className="border-2 border-gray-300 p-2 rounded w-full"
               />
             </div>
@@ -85,7 +144,7 @@ const Edit = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 required
-                placeholder="Movie/Series Description"
+                placeholder={description}
                 className="border-2 border-gray-300 p-2 pb-12 rounded w-full"
               />
             </div>
@@ -101,7 +160,7 @@ const Edit = () => {
                 required
                 className="border-2 border-gray-300 p-2 rounded w-full"
               >
-                <option value="">Select Country</option>
+                <option value="">{country}</option>
                 <option value="United States">United States</option>
                 <option value="Canada">Canada</option>
                 <option value="United Kingdom">United Kingdom</option>

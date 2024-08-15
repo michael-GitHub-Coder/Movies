@@ -30,7 +30,7 @@ const Movies = () => {
 
     const moviesdata = movies && movies.map(datan => {
         return (
-            <Link key={datan.id} onClick={(e) => {e.preventDefault(); viewMovies(datan.id)}} ><img src={datan.image}  className="w-44 h-64 max-w-xs overflow-hidden shadow-lg"/></Link>
+            <Link key={datan.id} onClick={(e) => {e.preventDefault(); viewMovies(datan.id)}} ><img src={datan.image}  className="w-44 h-64 max-w-xs overflow-hidden shadow-lg hover:transform hover:translate-x-4 hover:translate-y-2 transition-transform duration-300"/></Link>
         )
     });
     const newMoviesData = moviesdata.filter(moviesdata => moviesdata !== undefined && moviesdata !=="");

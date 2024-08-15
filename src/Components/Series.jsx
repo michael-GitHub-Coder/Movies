@@ -29,7 +29,7 @@ const Series = () => {
 
     const seriesdata =  series && series.map(data =>{
         return (
-          <Link key={data.id} onClick={(e) => {e.preventDefault(); viewSeries(data.id)}} ><img src={data.image}  className="w-44 h-64 max-w-xs overflow-hidden shadow-lg"/></Link>
+          <Link key={data.id} onClick={(e) => {e.preventDefault(); viewSeries(data.id)}} ><img src={data.image}  className="w-44 h-64 max-w-xs overflow-hidden shadow-lg hover:transform hover:translate-x-4 hover:translate-y-2 transition-transform duration-300"/></Link>
       )
     })
   

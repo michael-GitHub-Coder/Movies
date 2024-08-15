@@ -22,7 +22,7 @@ const router = createBrowserRouter(
       <Route path='/AddMS' element={<AddMovies_Series/>} />
       <Route path='/ViewMovies/:id' element={<ViewMovies/>} loader={load} /> 
       <Route path='/ViewSeries/:id' element={<ViewSeries/>} loader ={load} />
-      <Route path='./Edit' element={<Edit/>} loader={load}/>
+      <Route path='/Edit/:id' element={<Edit/>} loader={load}/>
     </Route>
   )
 )

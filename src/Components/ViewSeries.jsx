@@ -52,7 +52,7 @@ const ViewSeries = () => {
                     <div>Type : {data.type}</div>
                 </div>
                 <div className="mt-8 py-2">
-                    <Link to={`/AddMS/${data.id}`}><button className="text-white mr-12 pl-4 pr-4 p-2 bg-indigo-500 rounded-full">EDIT</button></Link>
+                    <Link to={`/Edit/${data.id}`}><button className="text-white mr-12 pl-4 pr-4 p-2 bg-indigo-500 rounded-full">EDIT</button></Link>
                     <Link to="/AddMS"><button button className="text-white mr-12 pl-4 pr-4 p-2 bg-indigo-500 rounded-full">DELETE</button></Link>
                 </div>
             </div>

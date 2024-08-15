@@ -20,11 +20,8 @@ const AddMovies_Series = () => {
     if(file) {
        const reader = new FileReader();
        reader.onloadend = () => {
-           setUploadImage(reader.result);
-  
-
-          setImage(reader.result);
-           
+          setUploadImage(reader.result);
+          setImage(reader.result);   
        };
 
        reader.readAsDataURL(file);
@@ -45,7 +42,7 @@ const AddMovies_Series = () => {
       type,
       image,
    }
-   console.log(newData);
+
 
     try {
       const response = await fetch("http://localhost:5000/Movies", {
@@ -152,7 +149,7 @@ const AddMovies_Series = () => {
               <DatePicker
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
-                dateFormat="yyyy/mm/dd"
+                dateFormat="yyyy"
                 className="border-2 border-gray-300 p-2 rounded w-full"
                 value={startDate}
               />
