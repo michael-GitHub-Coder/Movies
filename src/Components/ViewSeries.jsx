@@ -32,12 +32,16 @@ const ViewSeries = () => {
 
   return (
     <>
-    <NavBar/>
+    {loaded.map( data => (data.id == id ? 
+        <NavBar title={data.name}/> 
+        : null ))
+    }
+    
     <div className="flex grid grid-cols-2 jstify-center justify-items-center mx-48 my-24">
         {loaded.map( data => (
             data.id == id ? 
             <>
-            <div className=" max-w-xs rounded overflow-hidden shadow-lg"><img src={'../public/' + (data.image)} className='h-full w-ful'/></div>
+            <div className=" max-w-xs rounded overflow-hidden shadow-lg"><img src={data.image} className='h-full w-ful'/></div>
                 <div className="w-5/6 px-6 rounded overflow-hidden ">
                 <div className=" font-bold text-xl">{data.name}</div>
                 <p className="py-10 ">{data.description}</p>
