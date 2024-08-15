@@ -41,7 +41,7 @@ const ViewSeries = () => {
                 <div className="font-bold text-md">
                     <div>Country : {data.country}</div>
                     <div>Genre : {data.genre}</div>
-                    <div>Year : {data.year}</div>
+                    <div>Year : {data.startDate.substring(0,4)}</div>
                     <div>Type : {data.type}</div>
                 </div>
                 <div className="mt-8 py-2">

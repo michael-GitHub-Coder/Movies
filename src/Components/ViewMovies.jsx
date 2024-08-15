@@ -4,6 +4,8 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar';
 import { useNavigate } from 'react-router-dom';
+
+
 const ViewMovies = () => {
 
     const {id} = useParams();
@@ -39,7 +41,7 @@ const ViewMovies = () => {
                 <div className="font-bold text-md">
                     <div>Country : {data.country}</div>
                     <div>Genre : {data.genre}</div>
-                    <div>Year : {data.year}</div>
+                    <div>Year : {data.startDate.substring(0,4)}</div>
                     <div>Type : {data.type}</div>
                 </div>
                 <div className="mt-8 py-2">
@@ -52,6 +54,7 @@ const ViewMovies = () => {
          ))}
         
     </div>
+   
    </>
   )
   
