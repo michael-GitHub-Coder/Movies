@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import NavBar from "./NavBar";
+import { useNavigate } from "react-router-dom";
 
 const AddMovies_Series = () => {
 
-
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [country, setCountry] = useState("");
@@ -57,6 +58,7 @@ const AddMovies_Series = () => {
       
       if (response.ok) {
         alert("Movie/Series added successfully!");
+        navigate("/AddMS");
         setName("");
         setCountry("");
         setDescription("");

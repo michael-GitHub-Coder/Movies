@@ -21,15 +21,14 @@ const Edit = () => {
       try {
         const response = await fetch(`http://localhost:5000/Movies?${id}`);
         const data = await response.json();
-        
-        console.log(data.id)
-        alert(data.id)
-        // setName(data.name);
-        // setDescription(data.description);
-        // setCountry(data.country);
-        // setType(data.type);
-        // setStartDate(data.startDate);
-        // setImage(data.image);
+
+        setName(data.name);
+        setDescription(data.description);
+        setCountry(data.country);
+        setType(data.type);
+        setStartDate(data.startDate);
+        setImage(data.image);
+
       } catch (error) {
         console.error("Error fetching data:", error);
       }

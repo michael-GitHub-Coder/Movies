@@ -6,29 +6,22 @@ import { Link } from 'react-router-dom';
 import testP from '../Images/1c.png'
 import NavBar from './NavBar';
 
+
 const ViewSeries = () => {
 
     const {id} = useParams();
-
+    const navigate = useNavigate();
     const loaded = useLoaderData();
 
-    // const [seres, setSeries] = useState([]);
+    const  onDelete = async (e,idc) =>{
+        const res = await fetch(`http://localhost:5000/Movies/${idc}`,{
+            method: 'DELETE',
+        });
 
-    // useEffect(() =>{
-    //     const fetchMovie = async () => {
-    //         try{
-    //             const res = await fetch('http://localhost:5000/Movies?type=Series');
-    //             const data = await res.json();
-    //             setSeries(data);
-
-    //         }catch (error){
-    //             console.log("Error fetching data" + error);
-    //         }
-    //     }
-
-    //     fetchMovie();
-
-    // },[])
+        e.preventDefault();
+        const confirm = window.confirm("Are you sure you want to delete this file?");
+        navigate("/series")
+    }
 
   return (
     <>
@@ -53,7 +46,7 @@ const ViewSeries = () => {
                 </div>
                 <div className="mt-8 py-2">
                     <Link to={`/Edit/${data.id}`}><button className="text-white mr-12 pl-4 pr-4 p-2 bg-indigo-500 rounded-full">EDIT</button></Link>
-                    <Link to="/AddMS"><button button className="text-white mr-12 pl-4 pr-4 p-2 bg-indigo-500 rounded-full">DELETE</button></Link>
+                    <button onClick={(e) => {onDelete(e,data.id)}} className="text-white mr-12 pl-4 pr-4 p-2 bg-indigo-500 rounded-full">DELETE</button>
                 </div>
             </div>
             </>
