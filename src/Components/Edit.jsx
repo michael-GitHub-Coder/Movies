@@ -2,12 +2,12 @@ import React, { useState,useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import NavBar from "./NavBar";
-import {useParams, useLoaderData } from "react-router-dom";
+import {useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Edit = () => {
 
-
-  const Editdata = useLoaderData();
+  const navigate = useNavigate();
   const {id} = useParams();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -15,19 +15,28 @@ const Edit = () => {
   const [type, setType] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [image, setImage] = useState(null);
-
+ 
+  const setStates = (name1, description1, country1, type1, startDate1, image1) => {
+        setName(name1);
+        setDescription(description1);
+        setCountry(country1);
+        setType(type1);
+        setStartDate(startDate1);
+        setImage(image1);
+        
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/Movies?${id}`);
+        const response = await fetch("http://localhost:5000/Movies?");
         const data = await response.json();
+        console.log(data)
 
-        setName(data.name);
-        setDescription(data.description);
-        setCountry(data.country);
-        setType(data.type);
-        setStartDate(data.startDate);
-        setImage(data.image);
+        data.map( data => {
+          data.id == id ? 
+            setStates(data.name,data.description,data.country,data.type,data.startDate,data.image)
+          : null
+        })
 
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -36,16 +45,9 @@ const Edit = () => {
 
     fetchData();
 
+    
  
   }, []);
-
-  // {
-  //   Editdata.map(n => {
-  //     n.id === id ? console.log(n) : alert(Editdata.id + " " + id)
-  //     console.log(n.id)
-  //   })
-  // }
- 
 
   const handleFileChange = (event) => {
     setImage(event.target.files[0]);
@@ -88,13 +90,13 @@ const Edit = () => {
     
       
       if (response.ok) {
-        alert("Movie/Series added successfully!");
+        alert("Movie/Series updated successfully!");
         setName("");
         setCountry("");
         setDescription("");
-        setImage("");
+        setImage(null);
       } else {
-        alert("Failed to add Movie/Series.");
+        alert("Failed to update Movie/Series.");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -116,6 +118,9 @@ const Edit = () => {
         <div className="w-1/2 h-5/6 overflow-hidden shadow-lg bg-gray-300">
           <div className="flex justify-center font-bold text-sm ml-24 mt-52">
             <input type="file" name="image" onChange={handleFileChange} />
+            {
+              image && (<img src={image}  alt='Upload Movie Poster' className='w-full h-full object-cover'></img>)
+            }
           </div>
         </div>
         <div className="w-4/5 px-6 rounded overflow-hidden">

@@ -13,7 +13,7 @@ const AddMovies_Series = () => {
   const [type, setType] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [image, setImage] = useState(null);
-  const [uploadImage,setUploadImage] = useState(null);
+ 
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -21,7 +21,7 @@ const AddMovies_Series = () => {
     if(file) {
        const reader = new FileReader();
        reader.onloadend = () => {
-          setUploadImage(reader.result);
+         
           setImage(reader.result);   
        };
 
@@ -62,7 +62,7 @@ const AddMovies_Series = () => {
         setName("");
         setCountry("");
         setDescription("");
-        setImage("");
+        setImage(null);
       } else {
         alert("Failed to add Movie/Series.");
       }
@@ -79,15 +79,14 @@ const AddMovies_Series = () => {
          onSubmit={handleSubmit}
         className="flex grid grid-cols-2 justify-center justify-items-center mx-48 my-24"
       >
-        <div className="w-1/2 h-5/6 overflow-hidden shadow-lg bg-gray-300">
-        <input type="file" name="image" onChange={handleImageChange} />
-          <div className="flex justify-center font-bold text-sm ml-24 mt-52">
-          {
-            uploadImage && (
-                <img src={uploadImage}  alt='Upload Movie Poster' className='w-full h-full object-cover'></img>
-            )
-          }
-         
+        <div className="w-1/2 h-4/5 overflow-hidden shadow-lg bg-gray-300">
+          <input type="file" name="image" onChange={handleImageChange} />
+            <div className="flex justify-center font-bold text-sm ml-24 mt-52">
+            {
+              image && (<img src={image}  alt='Upload Movie Poster' className='w-full h-full object-cover'></img>)
+            }
+            {/* //the impact of 5g technology on society and industries */}
+          
           </div>
         </div>
         <div className="w-4/5 px-6 rounded overflow-hidden">
@@ -151,7 +150,7 @@ const AddMovies_Series = () => {
               <DatePicker
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
-                dateFormat="yyyy"
+                dateFormat="yyyy/mm/dd"
                 className="border-2 border-gray-300 p-2 rounded w-full"
                 value={startDate}
               />
